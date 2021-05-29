@@ -1,0 +1,51 @@
+### 获取目前支持的数据库连接类型
+GET http://localhost:8400/api/jdbc/type
+Content-Type: application/json
+
+### 获取指定数据类型的默认端口
+GET http://localhost:8400/api/jdbc/port?type=sqlserver
+Content-Type: application/json
+
+### 连接数据库获取表名
+POST http://localhost:8400/api/jdbc/connection
+Content-Type: application/json
+
+{
+  "dbType": "mysql",
+  "dbIp": "biabia.dxwang.top",
+  "dbPort": "3306",
+  "dbName": "dx21601",
+  "dbUserName": "root",
+  "dbUserPassword": "123456",
+  "dbUrl":""
+}
+
+### 获取指定数据库指定表数据
+POST http://localhost:8400/api/jdbc/getTableData
+Content-Type: application/json
+
+{
+  "id": "5ff2cb38b5b88f2809502f22",
+  "tableName": "hours"
+}
+
+### 修改连接信息
+POST http://localhost:8400/api/jdbc/update
+Content-Type: application/json
+
+{
+  "id": "5ff2cb38b5b88f2809502f22",
+  "name": "哈哈哈哈123",
+  "connect":{
+    "dbType": "mysql",
+    "dbIp": "biabia.dxwang.top",
+    "dbPort": "3306",
+    "dbName": "dx21601",
+    "dbUserName": "root",
+    "dbUserPassword": "123456"
+  }
+}
+
+### 删除连接信息
+GET http://localhost:8400/api/jdbc/delete?id=5ff31ef1646d744863cc32f6
+Content-Type: application/json
